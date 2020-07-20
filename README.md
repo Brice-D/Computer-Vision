@@ -106,12 +106,27 @@ Das trainig loss und validation loss sind nicht stabil.
 
 ## Model 5
 
-Interessant 
+Interessant wäre auch zu beobachten, wie die learning rate das Ergebnis des Trainings beeinflussen kann. 
+Die Lernrate ist ein Hyperparameter, der steuert, wie sehr wir die Gewichte unseres Netzwerks unter Berücksichtigung des Verlustgradienten anpassen. Die folgende Formel zeigt die Abhängigkeit: new_weight = existing_weight — learning_rate * gradient
+
+<p align="center">
+	<img src="images/Test5.jpeg">
+</p>
+
+Die Learnrate wurde reduziert von learning_rate=1e-4 auf learning_rate=1e-5. Das Ergebnis ist nicht schlecht aber im Vergleich zu dem dritten Model, konnte hier 231 Bilder nicht erkannt werden. Das sind mehr Bilder als mit dem Model 3, das nur 185 Bilder nicht erkennen konnte.
+
+## Zusammenfassung 
 
 
 
 
+## Quelle
 
+- [Dataset](https://towardsdatascience.com/train-validation-and-test-sets-72cb40cba9e7)
+- [Transfer learning](https://builtin.com/data-science/transfer-learning)
+- [Overfitting](https://elitedatascience.com/overfitting-in-machine-learning)
+- [Learning rate](https://towardsdatascience.com/understanding-learning-rates-and-how-it-improves-performance-in-deep-learning-d0d4059c1c10)
+- 
 
 
 
