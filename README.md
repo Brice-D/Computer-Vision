@@ -1,2 +1,1 @@
-# Computer-Vision
-# Image Classification
+## Image Classification
