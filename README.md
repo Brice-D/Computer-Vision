@@ -8,6 +8,8 @@ Dafür wurde als Lösungsansatz "Transfer Learning" ausgewählt. Es wird später
 
 ### Fruits-360
 
+<img src="/Users/bricedorsey/Computer-Vision/images/6_100.jpg" style="zoom:200%;" />
+
 Dieser Datensatz besteht aus 90483 Obst-Bilder, die in 131 Klassen (Avocado, Apfel, Kirschen etc.) unterteilt sind. Diese ganze Bilder würden in 3 Verzeichnisse verteilt, das erste enthält Bilder für das Training (67692 Bilder), das nächste enthält Bilder für das Testen (22688) und das letzte 103 Bilder auf denen mehreren Obst zu sehen sind. Das letztere Verzeichnis wird jedoch während dieser Arbeit nicht verwendet. Die Bilder haben eine Größe von 100x100 Pixel und der Datensatz wurde für das letzte Mal am 18. Mai 2020 aktualisiert. 
 
 ### Ähnliche Arbeiten 
@@ -44,4 +46,4 @@ ResNet50 ist eine CNN bestehend aus 50 Layers. Das Frameworks keras stellt ein s
 
 
 
-    
+​    
