@@ -41,16 +41,46 @@ ResNet50 ist eine CNN bestehend aus 50 Layers. Das Frameworks keras stellt ein s
 ### Implementierung
 
 Es wurden insgesamt 6 Modele basierend auf ResNet50 trainiert, die Modele wurden nach und nach verbessert, um bessere Ergebnisse zu erzielen in dem Hyperparameter immer angepasst wurden. Die Plot von allen trainierten Modellen werden hier dargestellt und erklärt.
-
-## Model 1
-
-Beim ersten Training wurde das ResNet50 Model geladen, der letzte Layers deaktiviert "freeze" und die anderen Layers des Models so gesetzt, dass diese nicht trainiert werden. Zu allen Modelen wurden vie neue Layers hinzugefügt:
+Zu allen Modelen wurden vie neue Layers hinzugefügt:
 - Zwei Dense Layer, mit "relu" als Aktivierungsfunktion, einmal 512 und 256 Units für die Dimension des Outputs 
 - zwischen diesen Dense() Layers sind Dropout() Layers mit einer Rate von 25%
 - Der Output Layer ist ebensfalls ein Dense() mit "softmax" als Aktivierungsfunktion und 131 Units, weil die Datensätze über 131 Klassen verfügt. Softmax ist immer
   Softmax ist die Funktion, die am bestens passt für eine Klassifiezierung von mehr als 2 Klassen.
+  
+## Model 1
 
-Das Ergebnis des Trainings ist im unten stehenden Bild zu sehen. 
+Beim ersten Training wurde das ResNet50 Model geladen, der letzte Layers deaktiviert "freeze" und die anderen Layers des Models so gesetzt, dass diese nicht trainiert werden. 
+
+Das Ergebnis des ersten Trainings ist im unten stehenden Bild zu sehen. 
+
+<p align="center">
+	<img src="images/Test1.jpeg">
+</p>
+
+Wie auf dem Bild zu sehen ist, hat das Model nicht wirklich gelernt, weil die Accuracy für die Validation Bilder nicht mal 1% erreicht hat. Das erste Model wird mit den Testbildern evaluiert und ergibt eine Genauigkeit von 0,71%. Von den 22688 Testbildern können nur 163 Bilder richtig erkannt werden. (very bad result 😢 )
+
+## Model 2
+
+Hier ging es darum alle Layers von ResNet50 10 Epochen zu trainieren.
+
+<p align="center">
+	<img src="images/Test2.jpeg">
+</p>
+
+Wie dem Bild zu entnehmen ist, konnte hier ein besseres Ergebnis erreicht werden. Jedoch merkt man das es zwischen den Epochen [2 4] und [6 9] zu eineim möglichen Overfitting kommt, weil in diesen Bereichen die Loss größer wird. 
+Beim nächsten Ansatz wird versucht das Problem zu lösen. 
+
+## Model 3
+
+Das Problem des Overfittings, das taucht beim zweiten Model wollen wir hier lösen. Das Problem taucht auf wenn das trainierte Model eine schlechte Genauigkeit ergibt mit neuen Datensätze, einfach erklärt: training loss << validation loss. 
+
+Es gibt mehrere Methoden das Overfitting zu vermeiden (hier werden nur 2 zwei einfachsten erwähnt)
+- Das Model mit mehr Daten trainieren
+- Early stopping: hier geht es darum das Model mit weningen Epochen zu trainieren. Bis zu einem bestimmten Punkt wird das Model verbessert, Nach diesem Punkt kann     die Fähigkeit des Modells zur Verallgemeinerung jedoch nachlassen, wenn es beginnt, die Trainingsdaten zu überlagern. Die Idee ist dann das Model nur bis zu diesem Punkt zu trainieren. 
+
+<p align="center">
+	<img src="images/Test3.jpeg">
+</p>
 
 
 
@@ -61,4 +91,7 @@ Das Ergebnis des Trainings ist im unten stehenden Bild zu sehen.
 
 
 
-​    
+
+
+
+    
