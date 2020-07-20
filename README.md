@@ -126,9 +126,6 @@ Die Learnrate wurde reduziert von learning_rate=1e-4 auf learning_rate=1e-5. Das
 - [Transfer learning](https://builtin.com/data-science/transfer-learning)
 - [Overfitting](https://elitedatascience.com/overfitting-in-machine-learning)
 - [Learning rate](https://towardsdatascience.com/understanding-learning-rates-and-how-it-improves-performance-in-deep-learning-d0d4059c1c10)
-- 
-
-
 
 
     
